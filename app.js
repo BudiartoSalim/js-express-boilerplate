@@ -14,10 +14,14 @@ app.use("/callbacks", xfersCallbackVerificator);
 
 app.post('/callbacks/accept', (req, res, next) => {
   //process the callback data for xfers accept API
+  //send status 200 for response if successful so Xfers will not retry the callback multiple times
+  res.status(200).json({ message: "success" });
 });
 
 app.post('/callbacks/send', (req, res, next) => {
   //process the callback data for xfers send API
+  //send status 200 for response if successful so Xfers will not retry the callback multiple times
+  res.status(200).json({ message: "success" });
 });
 
 
